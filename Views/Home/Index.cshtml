@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebDictionary.Models.Driver>
+@{
+    ViewBag.Title = "Drivers";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Index
+    </title>
+</head>
+<body>
+    <h3>Dictionary</h3>
+    <br />
+    <h3>SearchDriver</h3>
+    <form action="/Home/SearchDriver" method="get">
+        <table>
+            <tr>
+                <td><input type="text" name="Name" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Search" /></td>
+            </tr>
+        </table>
+    </form>
+    @*<div>
+        @using (Ajax.BeginForm("SearchDriver", "Home", new AjaxOptions { UpdateTargetId = "results" }))
+        {
+            <input type="text" name="Name" />
+            <input type="submit" value="Поиск" />
+        }
+    </div>
+    @Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")*@
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Experience</td>
+                <td>Name Car</td>
+                <td>Engine</td>
+                <td>Power</td>
+                <td>Transmission</td>
+                <td>Color</td>
+                <td>&nbsp;</td>
+            </tr>
+        </thead>
+        <div id="results">
+            @using WebDictionary.Helpers
+            @Html.CreateList(Model)
+        </div>
+    </table>
+</body>
+</html>

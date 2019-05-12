@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebDictionary.Models.Driver>
+@{
+    ViewBag.Title = "SearchDriver";
+}
+
+<h2>SearchDriver</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Index
+    </title>
+</head>
+<body>
+    <h3>Dictionary</h3>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Experience</td>
+                <td>Name Car</td>
+                <td>Engine</td>
+                <td>Power</td>
+                <td>Transmission</td>
+                <td>Color</td>
+                <td>&nbsp;</td>
+            </tr>
+        </thead>
+        <div id="results">
+            @using WebDictionary.Helpers
+            @Html.CreateList(Model)
+        </div>
+    </table>
+</body>
+</html>
